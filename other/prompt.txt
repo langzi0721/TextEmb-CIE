@@ -1,0 +1,18 @@
+================================================================================
+PROMPT CONFIGURATION FOR TEXT EMBEDDINGS (QWEN)
+================================================================================
+
+--------------------------------------------------------------------------------
+Group D Prompt:
+--------------------------------------------------------------------------------
+prompt_text = f"""Molecular Characterization for Corrosion Inhibition: The compound defined by SMILES {row['isomeric_smiles']} is analyzed for its interfacial adsorption properties. Quantum Chemical Profile: It exhibits a LUMO energy of {float(row['LUMO / eV']):.4f} eV, which dictates its ability to accept back-donated electrons from metal surfaces. The structural topology is defined by CATS3D value {row['CATS3D_02_AP']} and 3D-MoRSE descriptor Mor04m ({float(row['Mor04m']):.4f}), representing the spatial distribution of atomic mass and pharmacophoric points. Electronic Environment: The polarizability E1p ({float(row['E1p']):.4f}) and molar refractivity P_VSA_MR_5 ({float(row['P_VSA_MR_5']):.4f}) indicate the deformability of the electron cloud and the dispersion forces during metal-ligand formation. Inhibition Mechanism: Please encode a 1024-dimensional latent representation that prioritizes the molecule's adsorption geometry (parallel vs. vertical), the strength of the coordinate bond with metal d-orbitals, and the formation of a dense protective hydrophobic layer."""
+
+--------------------------------------------------------------------------------
+Group E Prompt:
+--------------------------------------------------------------------------------
+prompt_text = f"""Expert Molecular Profiling: The inhibitor {row['isomeric_smiles']} exhibits an inhibition efficiency of *. Electronic Structure Analysis: Its LUMO energy is {float(row['LUMO / eV']):.4f} eV, a primary determinant for electron acceptance from metal d-orbitals, characterizing its frontier molecular orbital (FMO) interaction. The molecular polarizability (E1p: {float(row['E1p']):.4f}) and molar refractivity (P_VSA_MR: {float(row['P_VSA_MR_5']):.4f}) suggest high electron cloud deformability, which facilitates strong chemisorption via coordination bonds. Topological & Spatial Constraints: The CATS3D index and 3D-MoRSE descriptor Mor04m reflect the pharmacophoric distribution and atomic scattering, crucial for predicting whether the molecule adopts a flat or vertical adsorption geometry on the metal surface. Goal: Generate a 1024-dimensional latent representation that integrates these stereoelectronic factors to model the formation of a dense, protective hydrophobic barrier against corrosive species."""
+================================================================================
+
+Note:
+- Bracketed fields (e.g., {row['isomeric_smiles']}, {row['LUMO / eV']}) are dynamically filled with the corresponding molecular SMILES strings and exact numerical descriptor values at runtime.
+- The symbol '*' in Group E represents a masked placeholder token for the experimental inhibition efficiency to prevent direct data leakage while preserving the syntactic structure of the domain prompt.

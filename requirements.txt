@@ -1,0 +1,9 @@
+numpy==2.0.2
+pandas==2.3.3
+scipy==1.13.1
+scikit-learn==1.6.1
+xgboost==2.1.4
+torch==2.5.1
+rdkit==2025.09.2
+transformers==4.57.5
+openai==1.100.2
