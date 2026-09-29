@@ -9,13 +9,13 @@ This repository contains the data and source code for the study: **"Text Embeddi
 * `result.txt`: Output results and performance metrics.
 
 
-* **Data/**
+* **Data**
 * `BC-embedding.csv`: Molecular representations extracted using ChemBERTa.
 * `D-embedding.csv`: Text-based embeddings generated via Qwen for Group D.
 * `E-embedding.csv`: Text-based embeddings generated via Qwen for Group E.
 
 
-* **Code/**
+* **Code**
 * `Group-ABC.py`: Model training and evaluation script for Group ABC (requires `data.csv` and `BC-embedding.csv` in the same directory).
 * `Group-D.py`: Script for Group D analysis (requires `D-embedding.csv`).
 * `Group-E.py`: Script for Group E training and evaluation (requires `E-embedding.csv`).
@@ -27,7 +27,7 @@ This repository contains the data and source code for the study: **"Text Embeddi
 * `emb-qwen.py`: Feature extraction script using Qwen text embeddings.
 
 
-* **Other/**
+* **Other**
 * `prompt.txt`: Prompts utilized for text embedding generation.
 
 
